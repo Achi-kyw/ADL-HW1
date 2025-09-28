@@ -1,5 +1,7 @@
 __pycache__
 paragraph_bert*
 span_bert*
+paragraph_lert*
+span_lert*
 *.csv
 *.json

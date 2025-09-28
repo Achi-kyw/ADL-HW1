@@ -115,7 +115,7 @@ def parse_args():
         type=str,
         help="Path to pretrained model or model identifier from huggingface.co/models.",
         required=False,
-        default="bert-base-chinese",
+        default="hfl/chinese-lert-base",
     )
     parser.add_argument(
         "--config_name",
@@ -126,7 +126,7 @@ def parse_args():
     parser.add_argument(
         "--tokenizer_name",
         type=str,
-        default=None,
+        default=None,# "bert-base-chinese",
         help="Pretrained tokenizer name or path if not the same as model_name",
     )
     parser.add_argument(
@@ -137,7 +137,7 @@ def parse_args():
     parser.add_argument(
         "--per_device_train_batch_size",
         type=int,
-        default=2,
+        default=1,
         help="Batch size (per device) for the training dataloader.",
     )
     parser.add_argument(
@@ -181,7 +181,7 @@ def parse_args():
     parser.add_argument(
         "--model_type",
         type=str,
-        default=None,
+        default="bert",
         help="Model type to use if training from scratch.",
         choices=MODEL_TYPES,
     )
@@ -368,6 +368,7 @@ def main():
         tokenizer = AutoTokenizer.from_pretrained(
             args.model_name_or_path, use_fast=not args.use_slow_tokenizer, trust_remote_code=args.trust_remote_code
         )
+        print("Tokenizer",tokenizer)
     else:
         raise ValueError(
             "You are instantiating a new tokenizer from scratch. This is not supported by this script. "

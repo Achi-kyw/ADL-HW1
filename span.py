@@ -135,7 +135,7 @@ def parse_args():
         type=str,
         help="Path to pretrained model or model identifier from huggingface.co/models.",
         required=False,
-        default="bert-base-chinese",
+        default="hfl/chinese-lert-base",
     )
     parser.add_argument(
         "--config_name",
@@ -157,7 +157,7 @@ def parse_args():
     parser.add_argument(
         "--per_device_train_batch_size",
         type=int,
-        default=8,
+        default=1,
         help="Batch size (per device) for the training dataloader.",
     )
     parser.add_argument(
@@ -183,7 +183,7 @@ def parse_args():
     parser.add_argument(
         "--gradient_accumulation_steps",
         type=int,
-        default=4,
+        default=2,
         help="Number of updates steps to accumulate before performing a backward/update pass.",
     )
     parser.add_argument(
@@ -297,7 +297,7 @@ def parse_args():
     parser.add_argument(
         "--with_tracking",
         action="store_true",
-        default=True
+        default=True,
         help="Whether to enable experiment trackers for logging.",
     )
     parser.add_argument(
