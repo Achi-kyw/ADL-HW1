@@ -2,7 +2,7 @@ torch
 datasets
 evaluate
 accelerate
-huggingface_hub
 tqdm
 transformers
 scikit-learn
+gdown
