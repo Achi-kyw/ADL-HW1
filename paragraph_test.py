@@ -115,7 +115,7 @@ def parse_args():
         type=str,
         help="Path to pretrained model or model identifier from huggingface.co/models.",
         required=False,
-        default="paragraph_bert",
+        default="paragraph_lert",
     )
     parser.add_argument(
         "--config_name",
@@ -176,7 +176,7 @@ def parse_args():
     parser.add_argument(
         "--num_warmup_steps", type=int, default=0, help="Number of steps for the warmup in the lr scheduler."
     )
-    parser.add_argument("--output_dir", type=str, default="paragraph_bert_test", help="Where to store the final model.")
+    parser.add_argument("--output_dir", type=str, default="paragraph_lert_test", help="Where to store the final model.")
     parser.add_argument("--predict_output_dir", type=str, default="test_span.json", help="Where to save the predict result.")
     parser.add_argument("--seed", type=int, default=None, help="A seed for reproducible training.")
     parser.add_argument(
